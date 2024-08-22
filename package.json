@@ -1,0 +1,32 @@
+{
+  "name": "uartix-syntax-highlighting",
+  "displayName": "Uartix",
+  "description": "Uartix language and syntax highlighting extension.",
+  "version": "0.0.1",
+  "icon": "icons/icon.png",
+  "publisher": "Uartix Official",
+  "repository": "https://github.com/nthnn/uartix-vsce",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "uartix",
+      "aliases": ["Uartix", "uartix"],
+      "extensions": [".utx"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./icons/file-icon.png",
+        "dark": "./icons/file-icon.png"
+      }
+    }],
+    "grammars": [{
+      "language": "uartix",
+      "scopeName": "source.uartix",
+      "path": "./syntaxes/uartix.tmLanguage.json"
+    }]
+  }
+}
