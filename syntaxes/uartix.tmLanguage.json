@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Uartix",
+	"patterns": [
+		{ "include": "#keywords" },
+		{ "include": "#strings" },
+		{ "include": "#digits" },
+		{ "include": "#comments" }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.uartix",
+				"match": "\\b(break|continue|ret|throw|if|else|unless|when|do|while|loop|random|catch|handle|then|func|use|test|render|type|true|false|maybe|nil)\\b"
+			}]
+		},
+		"digits": {
+			"patterns": [{
+				"name": "digit.numberic.uartix",
+				"match": "\\b(0b[01]+|0t[0-2]+|0c[0-7]+|0x[0-9a-fA-F]+|\\d+(\\.\\d*)?)\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.uartix",
+				"begin": "#",
+				"beginCaptures": {
+				  	"0": {
+						"name": "punctuation.definition.comment.uartix"
+					}
+				},
+				"end": "$"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.uartix",
+			"begin": "\"",
+			"end": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.uartix"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.uartix"
+				}
+			},
+			"patterns": [
+				{
+					"name": "constant.character.escape.uartix",
+					"match": "\\\\[btnfr\"\\\\]"
+				}
+			]
+		}
+	},
+	"fileTypes": ["utx"],
+	"scopeName": "source.uartix"
+}
